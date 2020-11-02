@@ -1,0 +1,14 @@
+[package]
+name = "isekai_parkour"
+version = "0.1.0"
+authors = ["oOBoomberOo <boombercmd123@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = "0.2.1"
+tilemap = { path = "./crates/isekai_parkour_tilemap" }
+
+[workspace]
+members = ["./crates/isekai_parkour_tilemap"]
