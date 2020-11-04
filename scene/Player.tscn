@@ -1,9 +1,15 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://assets/player/animation-sheet.png" type="Texture" id=1]
 [ext_resource path="res://script/player_controller.gd" type="Script" id=2]
+[ext_resource path="res://addons/visual_fsm/fsm/vfsm.gd" type="Script" id=3]
+[ext_resource path="res://addons/visual_fsm/fsm/vfsm_state.gd" type="Script" id=4]
+[ext_resource path="res://addons/visual_fsm/visual_fsm.gd" type="Script" id=5]
+[ext_resource path="res://addons/visual_fsm/fsm/vfsm_trigger_timer.gd" type="Script" id=6]
+[ext_resource path="res://addons/visual_fsm/fsm/vfsm_trigger_script.gd" type="Script" id=7]
+[ext_resource path="res://addons/visual_fsm/fsm/vfsm_trigger_action.gd" type="Script" id=8]
 
-[sub_resource type="CapsuleShape2D" id=78]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 7.63885
 height = 15.2344
 
@@ -93,213 +99,213 @@ region = Rect2( 250, 222, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
-region = Rect2( 300, 222, 50, 37 )
+region = Rect2( 50, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 259, 50, 37 )
+region = Rect2( 100, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 1 )
-region = Rect2( 50, 259, 50, 37 )
+region = Rect2( 150, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 1 )
-region = Rect2( 100, 259, 50, 37 )
+region = Rect2( 200, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 1 )
-region = Rect2( 150, 259, 50, 37 )
+region = Rect2( 250, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 1 )
-region = Rect2( 150, 481, 50, 37 )
+region = Rect2( 300, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 1 )
-region = Rect2( 200, 481, 50, 37 )
+region = Rect2( 100, 74, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 1 )
-region = Rect2( 250, 481, 50, 37 )
+region = Rect2( 150, 74, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 1 )
-region = Rect2( 300, 481, 50, 37 )
+region = Rect2( 200, 74, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 518, 50, 37 )
+region = Rect2( 250, 74, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 1 )
-region = Rect2( 50, 518, 50, 37 )
+region = Rect2( 300, 74, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 1 )
-region = Rect2( 100, 518, 50, 37 )
+region = Rect2( 0, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 1 )
-region = Rect2( 150, 518, 50, 37 )
+region = Rect2( 200, 259, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 1 )
-region = Rect2( 200, 518, 50, 37 )
+region = Rect2( 250, 259, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 1 )
-region = Rect2( 250, 518, 50, 37 )
+region = Rect2( 300, 259, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 1 )
-region = Rect2( 300, 518, 50, 37 )
+region = Rect2( 0, 296, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 555, 50, 37 )
+region = Rect2( 50, 296, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 1 )
-region = Rect2( 50, 555, 50, 37 )
+region = Rect2( 100, 296, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 1 )
-region = Rect2( 100, 555, 50, 37 )
+region = Rect2( 300, 222, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 1 )
-region = Rect2( 150, 555, 50, 37 )
+region = Rect2( 0, 259, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 1 )
-region = Rect2( 200, 0, 50, 37 )
+region = Rect2( 50, 259, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 1 )
-region = Rect2( 250, 0, 50, 37 )
+region = Rect2( 100, 259, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 1 )
-region = Rect2( 300, 0, 50, 37 )
+region = Rect2( 150, 259, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 37, 50, 37 )
+region = Rect2( 150, 481, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 1 )
+region = Rect2( 200, 481, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 1 )
+region = Rect2( 250, 481, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 1 )
-region = Rect2( 100, 74, 50, 37 )
+region = Rect2( 300, 481, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 1 )
-region = Rect2( 150, 74, 50, 37 )
+region = Rect2( 0, 518, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 1 )
-region = Rect2( 50, 111, 50, 37 )
+region = Rect2( 50, 518, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 1 )
-region = Rect2( 100, 111, 50, 37 )
+region = Rect2( 100, 518, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 1 )
-region = Rect2( 50, 37, 50, 37 )
+region = Rect2( 150, 518, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 1 )
-region = Rect2( 100, 37, 50, 37 )
+region = Rect2( 200, 518, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 1 )
-region = Rect2( 150, 37, 50, 37 )
+region = Rect2( 250, 518, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 1 )
-region = Rect2( 200, 37, 50, 37 )
+region = Rect2( 300, 518, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 1 )
-region = Rect2( 250, 37, 50, 37 )
+region = Rect2( 0, 555, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=58]
 atlas = ExtResource( 1 )
-region = Rect2( 300, 37, 50, 37 )
+region = Rect2( 50, 555, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 1 )
-region = Rect2( 200, 259, 50, 37 )
+region = Rect2( 100, 555, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 1 )
-region = Rect2( 250, 259, 50, 37 )
+region = Rect2( 150, 555, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 1 )
-region = Rect2( 300, 259, 50, 37 )
+region = Rect2( 150, 296, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=62]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 296, 50, 37 )
+region = Rect2( 200, 296, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 1 )
-region = Rect2( 50, 296, 50, 37 )
+region = Rect2( 250, 296, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 1 )
-region = Rect2( 100, 296, 50, 37 )
+region = Rect2( 300, 296, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 1 )
-region = Rect2( 150, 296, 50, 37 )
+region = Rect2( 50, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 1 )
-region = Rect2( 200, 296, 50, 37 )
+region = Rect2( 100, 111, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 1 )
-region = Rect2( 250, 296, 50, 37 )
+region = Rect2( 200, 0, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 1 )
-region = Rect2( 300, 296, 50, 37 )
+region = Rect2( 250, 0, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 1 )
-region = Rect2( 200, 74, 50, 37 )
+region = Rect2( 300, 0, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 1 )
-region = Rect2( 250, 74, 50, 37 )
+region = Rect2( 0, 37, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 1 )
-region = Rect2( 300, 74, 50, 37 )
+region = Rect2( 150, 185, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 111, 50, 37 )
+region = Rect2( 200, 185, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 1 )
-region = Rect2( 150, 185, 50, 37 )
+region = Rect2( 250, 185, 50, 37 )
 
 [sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 1 )
-region = Rect2( 200, 185, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=75]
-atlas = ExtResource( 1 )
-region = Rect2( 250, 185, 50, 37 )
-
-[sub_resource type="AtlasTexture" id=76]
-atlas = ExtResource( 1 )
 region = Rect2( 300, 185, 50, 37 )
 
-[sub_resource type="SpriteFrames" id=77]
+[sub_resource type="SpriteFrames" id=75]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
@@ -321,67 +327,363 @@ animations = [ {
 "name": "attack_1",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "attack_2",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
-"loop": true,
-"name": "attack_combo",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
-"loop": true,
-"name": "crouch",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 49 ), SubResource( 50 ) ],
-"loop": false,
-"name": "jump_up",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 51 ), SubResource( 52 ) ],
-"loop": true,
-"name": "jump_down",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
 "name": "running",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
-"loop": true,
-"name": "attack_3",
+"frames": [ SubResource( 29 ), SubResource( 30 ) ],
+"loop": false,
+"name": "jump_up",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
-"loop": true,
-"name": "stand_by",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": false,
 "name": "backflip",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ) ],
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "attack_3",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "attack_2",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"loop": true,
+"name": "attack_combo",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
+"loop": true,
+"name": "stand_by",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "jump_down",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ) ],
+"loop": true,
+"name": "crouch",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
 "loop": true,
 "name": "idle_with_sword",
 "speed": 7.0
 } ]
 
+[sub_resource type="GDScript" id=76]
+script/source = "# State: Idle
+extends VFSMStateBase
+
+
+func enter() -> void:
+	pass
+
+
+func update(object: PlayerController, _delta: float) -> void:
+	object.animator.play(\"idle\")
+
+
+func exit() -> void:
+	pass
+"
+
+[sub_resource type="Resource" id=77]
+script = ExtResource( 4 )
+vfsm_id = 0
+name = "Idle"
+position = Vector2( 280, -20 )
+trigger_ids = [ 9, 10, 6 ]
+custom_script = SubResource( 76 )
+
+[sub_resource type="GDScript" id=78]
+script/source = "# State: Running
+extends VFSMStateBase
+
+
+func enter() -> void:
+	pass
+
+
+func update(object: PlayerController, _delta: float) -> void:
+	object.animator.play(\"running\")
+
+
+func exit() -> void:
+	pass
+"
+
+[sub_resource type="Resource" id=79]
+script = ExtResource( 4 )
+vfsm_id = 1
+name = "Running"
+position = Vector2( 640, -240 )
+trigger_ids = [ 4, 10, 6 ]
+custom_script = SubResource( 78 )
+
+[sub_resource type="GDScript" id=80]
+script/source = "# State: JumpUp
+extends VFSMStateBase
+
+
+func enter() -> void:
+	pass
+
+
+func update(object: PlayerController, _delta: float) -> void:
+	object.animator.play(\"jump_up\")
+
+
+func exit() -> void:
+	pass
+"
+
+[sub_resource type="Resource" id=81]
+script = ExtResource( 4 )
+vfsm_id = 3
+name = "JumpUp"
+position = Vector2( 520, 280 )
+trigger_ids = [ 5 ]
+custom_script = SubResource( 80 )
+
+[sub_resource type="GDScript" id=82]
+script/source = "# State: Backflip
+extends VFSMStateBase
+
+
+func enter() -> void:
+	pass
+
+
+func update(object: PlayerController, _delta: float) -> void:
+	object.animator.play(\"backflip\")
+
+
+func exit() -> void:
+	pass
+"
+
+[sub_resource type="Resource" id=83]
+script = ExtResource( 4 )
+vfsm_id = 4
+name = "Backflip"
+position = Vector2( 800, 340 )
+trigger_ids = [ 8 ]
+custom_script = SubResource( 82 )
+
+[sub_resource type="GDScript" id=84]
+script/source = "# State: JumpDown
+extends VFSMStateBase
+
+
+func enter() -> void:
+	pass
+
+
+func update(object: PlayerController, _delta: float) -> void:
+	object.animator.play(\"jump_down\")
+	
+	if object.is_on_floor():
+		object.land()
+
+
+func exit() -> void:
+	pass
+"
+
+[sub_resource type="Resource" id=85]
+script = ExtResource( 4 )
+vfsm_id = 5
+name = "JumpDown"
+position = Vector2( 980, 40 )
+trigger_ids = [ 7 ]
+custom_script = SubResource( 84 )
+
+[sub_resource type="Resource" id=86]
+script = ExtResource( 8 )
+vfsm_id = 0
+name = ""
+action_list = [ "ui_right", "ui_left" ]
+
+[sub_resource type="Resource" id=87]
+script = ExtResource( 8 )
+vfsm_id = 1
+name = ""
+action_list = [ "ui_up" ]
+
+[sub_resource type="Resource" id=88]
+script = ExtResource( 8 )
+vfsm_id = 2
+name = ""
+action_list = [ "ui_up" ]
+
+[sub_resource type="GDScript" id=89]
+script/source = "# Trigger: OnLand
+extends VFSMTriggerBase
+
+
+func enter() -> void:
+	pass
+
+
+func is_triggered(object: PlayerController, _delta: float) -> bool:
+	return object.is_on_floor()
+"
+
+[sub_resource type="Resource" id=90]
+script = ExtResource( 7 )
+vfsm_id = 3
+name = "OnLand"
+custom_script = SubResource( 89 )
+
+[sub_resource type="GDScript" id=91]
+script/source = "# Trigger: OnStop
+extends VFSMTriggerBase
+
+
+func enter() -> void:
+	pass
+
+
+func is_triggered(object: PlayerController, _delta: float) -> bool:
+	return abs(object.motion.x) < object.running_threshold
+"
+
+[sub_resource type="Resource" id=92]
+script = ExtResource( 7 )
+vfsm_id = 4
+name = "OnStop"
+custom_script = SubResource( 91 )
+
+[sub_resource type="GDScript" id=93]
+script/source = "# Trigger: InAir
+extends VFSMTriggerBase
+
+
+func enter() -> void:
+	pass
+
+
+func is_triggered(object: PlayerController, _delta: float) -> bool:
+	return object.motion.y > -object.backflip_threshold
+"
+
+[sub_resource type="Resource" id=94]
+script = ExtResource( 7 )
+vfsm_id = 5
+name = "InAir"
+custom_script = SubResource( 93 )
+
+[sub_resource type="GDScript" id=95]
+script/source = "# Trigger: OnFall
+extends VFSMTriggerBase
+
+
+func enter() -> void:
+	pass
+
+
+func is_triggered(object: PlayerController, _delta: float) -> bool:
+	return object.motion.y > 0.5
+"
+
+[sub_resource type="Resource" id=96]
+script = ExtResource( 7 )
+vfsm_id = 6
+name = "OnFall"
+custom_script = SubResource( 95 )
+
+[sub_resource type="GDScript" id=97]
+script/source = "# Trigger: OnLanded
+extends VFSMTriggerBase
+
+
+func enter() -> void:
+	pass
+
+
+func is_triggered(object: PlayerController, _delta: float) -> bool:
+	return object.is_on_floor()
+"
+
+[sub_resource type="Resource" id=98]
+script = ExtResource( 7 )
+vfsm_id = 7
+name = "OnLanded"
+custom_script = SubResource( 97 )
+
+[sub_resource type="Resource" id=99]
+script = ExtResource( 6 )
+vfsm_id = 8
+name = ""
+duration = 0.4
+
+[sub_resource type="GDScript" id=100]
+script/source = "# Trigger: OnRun
+extends VFSMTriggerBase
+
+
+func enter() -> void:
+	pass
+
+
+func is_triggered(object: PlayerController, _delta: float) -> bool:
+	return abs(object.motion.x) > object.running_threshold and object.is_on_floor()
+"
+
+[sub_resource type="Resource" id=101]
+script = ExtResource( 7 )
+vfsm_id = 9
+name = "OnRun"
+custom_script = SubResource( 100 )
+
+[sub_resource type="GDScript" id=102]
+script/source = "# Trigger: OnJump
+extends VFSMTriggerBase
+
+
+func enter() -> void:
+	pass
+
+
+func is_triggered(object: PlayerController, _delta: float) -> bool:
+	return object.motion.y < -object.backflip_threshold
+"
+
+[sub_resource type="Resource" id=103]
+script = ExtResource( 7 )
+vfsm_id = 10
+name = "OnJump"
+custom_script = SubResource( 102 )
+
+[sub_resource type="Resource" id=104]
+script = ExtResource( 3 )
+start_state_vfsm_id = 0
+start_position = Vector2( 100, 100 )
+states = [ SubResource( 77 ), SubResource( 79 ), SubResource( 81 ), SubResource( 83 ), SubResource( 85 ) ]
+triggers = [ SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 90 ), SubResource( 92 ), SubResource( 94 ), SubResource( 96 ), SubResource( 98 ), SubResource( 99 ), SubResource( 101 ), SubResource( 103 ) ]
+transitions = [ 0, 9, 1, 0, 10, 3, 0, 6, 5, 1, 4, 0, 1, 10, 3, 1, 6, 5, 3, 5, 4, 4, 8, 5, 5, 7, 0 ]
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 78 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -2.91352 )
-frames = SubResource( 77 )
+frames = SubResource( 75 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_animation_finished"]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 5 )
+finite_state_machine = SubResource( 104 )
