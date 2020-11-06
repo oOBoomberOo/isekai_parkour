@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://script/player_controller.gd"
 }, {
+"base": "CollisionObject2D",
+"class": "PropItem",
+"language": "GDScript",
+"path": "res://script/props/item.gd"
+}, {
 "base": "Resource",
 "class": "VFSM",
 "language": "GDScript",
@@ -81,6 +86,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "PlayerController": "",
+"PropItem": "res://assets/props/stone.png",
 "VFSM": "",
 "VFSMDemoSimpleAIJumper": "",
 "VFSMDemoTrafficLightsController": "",
@@ -114,7 +120,7 @@ enabled=PoolStringArray( "visual_fsm" )
 
 [gui]
 
-theme/custom="res://assets/theme/ui.tres"
+theme/custom="res://assets/theme/ui.theme"
 
 [input]
 
