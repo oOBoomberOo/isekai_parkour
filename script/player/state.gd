@@ -15,55 +15,23 @@ func _start():
 	add_state("backflip")
 	return state.idle
 
-func _run(current: int, _delta: float):
+func _run(current: int, delta: float):
 	handle_history()
 	
 	match current:
-		state.idle:
-			return __idle()
-		state.run:
-			return __run()
-		state.jump:
-			return __jump()
-		state.fall:
-			return __fall()
 		state.slide_left, state.slide_right:
-			return __slide()
-		state.backflip:
-			return __backflip()
-
+			return __slide(delta)
 
 func _enter_state(new, _prev):
 	log_state(new)
-	match new:
-		state.idle:
-			player.animator.play("idle")
-		state.run:
-			player.animator.play("run")
-		state.jump:
-			player.jump(1)
-			player.animator.play("jump")
-		state.fall:
-			player.animator.play("fall")
-		state.slide_right:
-			player.move(1)
-			player.animator.play("slide")
-		state.slide_left:
-			player.move(-1)
-			player.animator.play("slide")
-		state.backflip:
-			player.animator.play("backflip")
-
 
 func _exit_state(new, prev):
 	match [prev, new]:
 		[state.fall, state.idle]:
 			player.land()
 
-
 func log_state(state):
 	history.push_front({ "state": state, "life": lifetime })
-
 
 func handle_history():
 	var new_history = []
@@ -73,16 +41,17 @@ func handle_history():
 			new_history.push_back(s)
 	history = new_history
 
-
 func state_history() -> Array:
 	var result = []
 	for s in history:
 		result.append(s.state)
 	return result
 
-
 # States
-func __idle():
+func __enter_idle(_prev):
+	player.animator.play("idle")
+
+func __idle(_delta):
 	match state_history():
 		[state.idle, state.run, state.idle, ..]:
 			if player.input == 1:
@@ -95,19 +64,27 @@ func __idle():
 	if player.is_running():
 		return state.run
 	if player.is_jumping():
+		player.jump(1)
 		return state.jump
 
 
-func __run():
+func __enter_run(_prev):
+	player.animator.play("run")
+
+func __run(_delta):
 	player.move(player.input)
 
 	if not player.is_running():
 		return state.idle
 	if player.is_jumping():
+		player.jump(1)
 		return state.jump
 
 
-func __jump():
+func __enter_jump(_prev):
+	player.animator.play("jump")
+
+func __jump(_delta):
 	player.move(player.input)
 	
 	if player.is_decending():
@@ -119,14 +96,25 @@ func __jump():
 	return state.backflip
 
 
-func __fall():
+func __enter_fall(_prev):
+	player.animator.play("fall")
+
+func __fall(_delta):
 	player.move(player.input)
 	
 	if player.is_on_floor():
 		return state.idle
 
 
-func __slide():
+func __enter_slide_left(_prev):
+	player.move(-1)
+	player.animator.play("slide")
+
+func __enter_slide_right(_prev):
+	player.move(1)
+	player.animator.play("slide")
+
+func __slide(_delta):
 	if not player.is_moving_along_input() and player.is_running():
 		return state.idle
 	
@@ -134,7 +122,10 @@ func __slide():
 	return state.idle
 
 
-func __backflip():
+func __enter_backflip(_prev):
+	player.animator.play("backflip")
+
+func __backflip(_delta):
 	player.move(player.input)
 	
 	if player.is_on_floor():
