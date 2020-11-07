@@ -36,12 +36,14 @@ func get_contact_points(body: PlayerController, body_shape: int, area_shape: int
 	var collision_points = area_shape_2d.collide_and_get_contacts(area_global_transform, body_shape_2d, body_global_transform)
 	return collision_points
 
+
 func body_shape(this: CollisionObject2D, shape: int) -> Array:
 	var shape_owner_id := this.shape_find_owner(shape)
 	var shape_owner: Node2D = this.shape_owner_get_owner(shape_owner_id)
 	var shape_2d := this.shape_owner_get_shape(shape_owner_id, 0)
 	
 	return [shape_2d, shape_owner.global_transform]
+
 
 func _physics_process(delta: float) -> void:
 	motion.x = movement
