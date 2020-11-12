@@ -13,7 +13,7 @@ func _on_attacked(player: PlayerController):
 	queue_free()
 
 
-func _on_body_shape_entered(body_id: int, body: Node, body_shape: int, area_shape: int) -> void:
+func _on_body_shape_entered(_body_id: int, body: Node, body_shape: int, area_shape: int) -> void:
 	if body is PlayerController:
 		for contact in get_contact_points(body, body_shape, area_shape):
 			var contact_direction = (body.position - contact).normalized()
@@ -45,7 +45,7 @@ func body_shape(this: CollisionObject2D, shape: int) -> Array:
 	return [shape_2d, shape_owner.global_transform]
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	motion.x = movement
 	motion.y += gravity
 	motion = move_and_slide(motion, Vector2.UP)

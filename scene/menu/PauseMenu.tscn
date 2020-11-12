@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/theme/ui.theme" type="Theme" id=1]
+[ext_resource path="res://assets/menu/isekai quartet.png" type="Texture" id=2]
+[ext_resource path="res://scene/menu/PauseMenu.gd" type="Script" id=3]
+
+[node name="Pause Menu" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+margin_left = 364.0
+margin_top = 172.0
+margin_right = 564.0
+margin_bottom = 428.0
+
+[node name="Isekai Quartet Logo" type="TextureRect" parent="ButtonContainer"]
+margin_right = 200.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Resume" type="Button" parent="ButtonContainer"]
+margin_top = 104.0
+margin_right = 200.0
+margin_bottom = 152.449
+text = "Resume"
+
+[node name="MainMenu" type="Button" parent="ButtonContainer"]
+margin_top = 156.0
+margin_right = 200.0
+margin_bottom = 204.449
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="ButtonContainer"]
+margin_top = 208.0
+margin_right = 200.0
+margin_bottom = 256.449
+text = "Exit"

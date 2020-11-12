@@ -14,31 +14,18 @@ var running_threshold := 0.1
 var gravity := 20
 var velocity := Vector2()
 
-var input := 0
-
 onready var animator: AnimatedSprite = $AnimatedSprite
-onready var state_machine: StateMachine = $PlayerState
+onready var state_machine: StateMachine = $State
 
-func _ready() -> void:
+func _ready():
 	animator.playing = true
-
-func _process(_delta: float) -> void:
-	gather_input()
-	moving_direction()
+	return $State.connect("state_changed", self, "handle_state_changed")
 
 func _physics_process(_delta):
 	velocity.y += gravity
 	velocity = move_and_slide(velocity, Vector2.UP)
 
-func gather_input():
-	input = 0
-	
-	if Input.is_action_pressed("move_left"):
-		input -= 1
-	if Input.is_action_pressed("move_right"):
-		input += 1
-
-func moving_direction():
+func moving_direction(input: float):
 	var dir = sign(input)
 	if dir == 1:
 		animator.flip_h = false
@@ -46,7 +33,7 @@ func moving_direction():
 		animator.flip_h = true
 
 func launch(power: float) -> void:
-	state_machine._current_state = state_machine.state.jump
+	state_machine.switch_state("jump")
 	velocity.y = 0
 	jump(power)
 
@@ -60,6 +47,14 @@ func move(power: float) -> void:
 func land():
 	emit_signal("landed")
 
+func handle_state_changed(_prev, _new):
+	var result = "State:\n"
+	var i = 0
+	for state in $State.stack:
+		i += 1
+		result += "  %s. %s\n" % [i, state]
+	$Control/Label.text = result
+
 # Helper Methods
 func is_decending() -> bool:
 	return velocity.y > 0
@@ -70,11 +65,11 @@ func is_ascending() -> bool:
 func is_moving() -> bool:
 	return sign(velocity.x) != 0
 
-func is_moving_along_input() -> bool:
-	return sign(velocity.x) == input
+func is_moving_along_input(dir: float) -> bool:
+	return sign(velocity.x) == sign(dir)
 
-func is_running() -> bool:
-	return input != 0
+func is_running(input: float) -> bool:
+	return sign(input) != 0
 
 func is_jumping() -> bool:
 	return Input.is_action_just_pressed("jump")
